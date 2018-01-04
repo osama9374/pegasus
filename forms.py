@@ -74,6 +74,10 @@ def start():
 		#xml = dicttoxml(parsed)
 		#dic = {'id':str(count),"content":parsed['content']}
 		#dic.update(parsed['metadata']
+		if(parsed['content'] is None):
+			#print "working"
+			parsed['content']="crime"
+
 		solr.add([{"id":str(count),"content":parsed['content'],"payloads":parsed['metadata']}])
         #{"id":str(count),"content":parsed['content']}
 
